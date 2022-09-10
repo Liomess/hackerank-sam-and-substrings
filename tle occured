@@ -1,0 +1,14 @@
+def substrings(n):
+    l1=[]
+    for i in n:
+        l1.append(i)
+    l2=list(map(lambda x:int(x),l1))
+    tot=0
+    prev=0
+    for i in range(len(l2)):
+        prev=l2[i]
+        tot+=prev
+        for j in range(i+1,len(l2)):
+            tot+=(prev*10)+l2[j]
+            prev=(prev*10)+l2[j]
+    return tot%(10**9+7)
