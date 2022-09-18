@@ -1,0 +1,8 @@
+def substrings(n):
+    ans=0
+    prev=0
+    for i in range(len(n)):
+        sums=prev*10+(i+1)*int(n[i])
+        ans+=sums
+        prev=sums
+    return ans%(10**9+7)
